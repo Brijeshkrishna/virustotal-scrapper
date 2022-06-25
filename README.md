@@ -5,9 +5,9 @@
 example
 
 
-``python
+`python
 upload_vt(filename=any file)
-``
+`
 
 
 it's returns a sha256 hash , using that we can check the details of the file 
