@@ -1,8 +1,8 @@
-# virustotal-uploader
+# virustotal-scrapper
 
-## To upload file to virus total without API
+## To upload file to virustotal and get the results without API
 
-usage
+# usage
 
 
 `
@@ -10,7 +10,7 @@ upload_vt(filename=any file)
 `
 
 
-it's returns a sha256 hash , using that we can check the details of the file 
+it's returns a SHA256 Hash, using that you can check the details of the file 
 
 
 `
