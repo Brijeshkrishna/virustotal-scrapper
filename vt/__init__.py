@@ -1,0 +1,1 @@
+from vt.vt import Virustotal
