@@ -1,6 +1,6 @@
 # virustotal-scrapper
 
-## To upload file to virustotal and get the results without API
+To upload file to virustotal and get the results without API
 
 # usage
 
