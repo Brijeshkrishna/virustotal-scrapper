@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="virustotal-scrapper",
+    name="vt",
     version="2.0.0",
     author="Brijesh krishna",
     description="scrapper for virustotal",
