@@ -5,7 +5,7 @@ To upload file to virustotal and get the results without API
 ## Installation
 
 ```
-pip3 install https://github.com/Brijeshkrishna/virustotal-scrapper
+pip install git+https://github.com/Brijeshkrishna/virustotal-scrapper.git
 ```
 # Usage
 ### Import module
