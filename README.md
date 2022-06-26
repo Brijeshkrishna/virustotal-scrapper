@@ -2,7 +2,7 @@
 
 ## To upload file to virus total without API
 
-example
+usage
 
 
 `
@@ -18,5 +18,5 @@ https://www.virustotal.com/gui/file/file-hash
 `
 
 
-replace the file-hash with our file hash
+replace the file-hash with your file hash
 
