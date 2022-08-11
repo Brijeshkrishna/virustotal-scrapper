@@ -63,6 +63,9 @@ def cleaninfo(hash):
     for i in range(len(DR)):
         signatures = f'{signatures}❌ {DL[i]}\
     \n╰ {DR[i]}\n'
+    
+    if D == 0:
+    	signatures = "✅ No Signatures Found, your File is Safe"
 
     link = f'https://virustotal.com/gui/file/{hash}'
     return fronttext,testtext,signatures,link

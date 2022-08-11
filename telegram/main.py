@@ -60,23 +60,31 @@ def progress(current, total, message):
 # check function
 def checkvirus(message):
     msg = app.send_message(message.chat.id, '🔽 Downloading...', reply_to_message_id=message.id)
+    print(f"Downloading: ID:  {message.id}  size: {message.document.file_size}")
     dnsta = threading.Thread(target=lambda:downstatus(f'{message.id}downstatus.txt',msg),daemon=True)
     dnsta.start()
 
     file = app.download_media(message,progress=progress, progress_args=[message])
     os.remove(f'{message.id}downstatus.txt')
     app.edit_message_text(message.chat.id, msg.id, '🔼 Uploading to VirusTotal...')
+    print(f"Uploading: ID: {message.id}  size: {message.document.file_size}")
 
     hash = botfunctions.uploadfile(file)
     os.remove(file)
+    print(f'ID: {message.id}  HASH: {hash}')
+    
     if hash == 0:
         app.edit_message_text(message.chat.id, msg.id, "✖️ Failed")
+        print("HASH is 0")
         return
+        
     app.edit_message_text(message.chat.id, msg.id, '⚙️ Checking...')
-
+	print(f"Checking: ID:  {message.id}  size: {message.document.file_size}")
     maintext, checktext, signatures, link = botfunctions.cleaninfo(hash)
+    
     if maintext == None:
         app.edit_message_text(message.chat.id, msg.id, "✖️ Failed")
+        print("Function returned None")
         return
 
     app.edit_message_text(message.chat.id, msg.id, maintext,
@@ -93,7 +101,7 @@ def checkvirus(message):
 @app.on_message(filters.document)
 def docu(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
     if int(message.document.file_size) > MAXSIZE:
-        app.send_message(message.chat.id, "⭕️ File is too Big for VirusTotal (>650MB)", reply_to_message_id=message.id)
+        app.send_message(message.chat.id, "⭕️ File is too Big for VirusTotal. It should be less than 650 MB", reply_to_message_id=message.id)
         return
     vt = threading.Thread(target=lambda:checkvirus(message),daemon=True)
     vt.start()	
