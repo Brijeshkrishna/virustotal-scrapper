@@ -1,2 +1,5 @@
 requests==2.28.0
 rich==12.4.4
+pyrogram 
+tgcrypto
+pydantic

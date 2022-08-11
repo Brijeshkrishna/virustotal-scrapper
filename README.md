@@ -1,38 +1,25 @@
-# Virustotal-scrapper
+# VirusTotal Bot
 
-To upload file to virustotal and get the results without API
+a Telegram Bot to check file in [VirusTotal](http://virustotal.com/) with over 70 different antiviruses.
 
-## Installation
+Inspired from https://github.com/Brijeshkrishna/virustotal-scrapper
 
-```
-pip3 install https://github.com/Brijeshkrishna/virustotal-scrapper
-```
+---
+
+## Variables
+
+- `HASH` Your API Hash from my.telegram.org
+- `ID` Your API ID from my.telegram.org
+- `TOKEN` Your bot token from @BotFather
+
+---
+
 # Usage
-### Import module
 
-```python
-from vt import Visustotal
-```
+You can send a file up to **650 MB** in size to the bot or forward it from another chat, and it will check file in **[VirusTotal](http://virustotal.com/)** with over **70** different antiviruses to get scan results and you will receive a detailed analysis of it.
 
-### File upload
+---
 
-```python
-vt= Visustotal()
-vt.upload_file(file name)
-```
-returns a SHA256 Hash ( file id ) using that you can check the details of the file 
+# Deploy
 
-```
-https://www.virustotal.com/gui/file/file-hash
-```
-
-## Url upload
-```python
-vt.upload_url(url)
-```
-returns a id , using that you can check the details of the website 
-
-```
-https://www.virustotal.com/gui/url/id
-```
-
+You can use the bot locally by running 'main.py' in 'telegram' folder or deploy using Procfile, Dokerfile, docker-compose.yml
