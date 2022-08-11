@@ -1,6 +1,6 @@
 # VirusTotal Bot
 
-a Telegram Bot to check file in VirusTotal.com with over 70 different antiviruses.
+a Telegram Bot to check file in [VirusTotal](http://virustotal.com/) with over 70 different antiviruses.
 
 inspired from https://github.com/Brijeshkrishna/virustotal-scrapper
 ---
