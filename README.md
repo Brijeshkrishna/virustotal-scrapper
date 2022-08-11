@@ -1,8 +1,8 @@
 # VirusTotal Bot
 
 a Telegram Bot to check file in [VirusTotal](http://virustotal.com/) with over 70 different antiviruses.
-
 inspired from https://github.com/Brijeshkrishna/virustotal-scrapper
+
 ---
 
 ## Variables
@@ -16,6 +16,7 @@ inspired from https://github.com/Brijeshkrishna/virustotal-scrapper
 # Usage
 
 You can send the file to the bot or forward it from another channel, and it will check file to **[VirusTotal](http://virustotal.com/)** with over **70** different antiviruses. To get scan results - send me any a file up to **650 MB** in size, and you will receive a detailed analysis of it.
+
 ---
 
 # Deploy
