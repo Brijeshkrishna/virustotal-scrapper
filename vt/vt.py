@@ -45,12 +45,13 @@ class Virustotal:
             f"https://www.virustotal.com/ui/files/{file_hash}",
             headers=self.upload_headers,
             allow_redirects=False
-        )  
-        return response.status_code == 200
+        ) 
+        
+        return 1 if response.status_code == 200 else 0
 
     def upload_file(self, filename, force=False):
         if self.check_file_exist(self.get_file_hash(filename)) and not force:
-            return 0
+            return self.get_file_hash(filename)
 
         upload_url = self.get_upload_url()
 
@@ -66,7 +67,7 @@ class Virustotal:
         if response.status_code == 200:
             return self.get_file_hash(filename=filename)
         else:
-            return 1
+            return 0
 
     def get_upload_url(self):
         response = self.session.get(
@@ -100,7 +101,7 @@ class Virustotal:
 
     def file_info(self,file_hash):
 
-        if not self.check_file_exist(file_hash):
+        if  not self.check_file_exist(file_hash):
             return None
 
         return file_info_fill(self.session.get(f"https://www.virustotal.com/ui/files/{file_hash}",headers=self.upload_headers).json())
