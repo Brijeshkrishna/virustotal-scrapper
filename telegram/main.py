@@ -79,7 +79,7 @@ def checkvirus(message):
         return
         
     app.edit_message_text(message.chat.id, msg.id, '⚙️ Checking...')
-	print(f"Checking: ID:  {message.id}  size: {message.document.file_size}")
+    print(f"Checking: ID:  {message.id}  size: {message.document.file_size}")
     maintext, checktext, signatures, link = botfunctions.cleaninfo(hash)
     
     if maintext == None:
