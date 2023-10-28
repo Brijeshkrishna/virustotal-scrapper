@@ -1,3 +1,4 @@
+# Currently not working 😔
 # Virustotal-scrapper
 
 To upload file to virustotal and get the results without API
